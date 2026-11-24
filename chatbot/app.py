@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field                     # describes and VALIDA
 # os.getenv("NAME", "default") means: use the environment variable NAME if it is set, else the default.
 # That is why you can change behaviour in docker-compose.yml without touching this code.
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://ollama:11434")   # where Ollama listens; "ollama" is its compose service name
-MODEL = os.getenv("MODEL", "qwen2.5:1.5b")                    # which model to use (must already be pulled in Ollama)
+MODEL = os.getenv("MODEL", "qwen2.5:7b")                    # which model to use (must already be pulled in Ollama)
 NUM_CTX = int(os.getenv("NUM_CTX", "4096"))                   # context window: how many tokens the model can read at once
 #   (history + your question + its answer must fit in this. Bigger = can remember more, but slower and uses more RAM.)
 TEMPERATURE = float(os.getenv("TEMPERATURE", "0.7"))          # 0 = predictable and repeatable, 1 = more varied/creative
